@@ -7,13 +7,15 @@ class ConvertController extends Controller
 {
     public function convert(Request $request) {
         
-        $valor = $request -> num;
-        if (is_numeric($valor)) {
+        
+        if (is_numeric($request -> num)) {
+            $valor = $request -> num;
             $resultado = $this ->convert_romanos((int)$valor);
-            return view('convert')->with(['resultado' => $resultado]);
+            return view('convert')->with(['resultado' => $resultado, 'valor' => $valor]);
         } else {
-            $resultado = $this->convert_real($valor);
-            return view('convert')->with(['resultado' => $resultado]);
+            $valor = $request -> num;
+            $resultado = $this->convert_real($request -> num);
+            return view('convert')->with(['resultado' => $resultado, 'valor' => $valor]);
         }
     }
 

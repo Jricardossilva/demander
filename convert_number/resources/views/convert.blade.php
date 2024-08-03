@@ -27,7 +27,16 @@
                     <input class="form-control cor-bg" name="num" type="text" placeholder="Digite um número" aria-label="default input example" value>
                 </div>
                 <div class="input_box text-center">
-                    <label for="disabledTextInput" class="form-label"> Valor convertido é <span class="valor_final">
+
+                    <label for="disabledTextInput" class="form-label"> Número solicitado: <span class="valor_final">
+                        <?php
+                            if(!empty($valor)){
+                                echo $valor;
+                            }
+                        ?>
+                        </span>
+                    </label>
+                    <label for="disabledTextInput" class="form-label"> Valor convertido: <span class="valor_final">
                         <?php
                             if(!empty($resultado)){
                                 echo $resultado;
