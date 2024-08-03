@@ -1,0 +1,128 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Poppins", sans-serif;
+  }
+  :root {
+    --primary-color: #C8C5E2;
+    --second-color: #ffffff;
+    --black-color: #0160AF;
+  }
+  body {
+    background-image: url("/img/bg_demander.jpg");
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  .logo {
+    text-align: center;
+  }
+
+  .cor-bg {
+    background-color: transparent;
+    border: 2px solid var(--primary-color);
+  }
+  
+  .wrapper {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+  }
+  .convert_box {
+    position: relative;
+    width: 450px;
+    backdrop-filter: blur(25px);
+    border: 2px solid var(--primary-color);
+    border-radius: 15px;
+    padding: 7.5em 2.5em 4em 2.5em;
+    color: var(--second-color);
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.2);
+  }
+  .convert-header {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--primary-color);
+    width: 180px;
+    height: 70px;
+    border-radius: 0 0 20px 20px;
+  }
+  .convert-header span {
+    font-size: 30px;
+    color: var(--black-color);
+  }
+  .convert-header::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-right-radius: 50%;
+    background: transparent;
+    box-shadow: 15px 0 0 0 var(--primary-color);
+  }
+  .convert-header::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    right: -30px;
+    width: 30px;
+    height: 30px;
+    border-top-left-radius: 50%;
+    background: transparent;
+    box-shadow: -15px 0 0 0 var(--primary-color);
+  }
+
+  .valor_final {
+    font-weight: bold;
+    font-size: 30px;
+  }
+
+  input[type="email"] {
+    text-align: center;
+  }
+
+  input[type="text"]::placeholder {
+    text-align: center;
+  }
+  .input_box {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0;
+  }
+  
+  .converter {
+    width: 100%;
+    height: 50px;
+    background: #ececec;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  .converter:hover {
+    background: var(--primary-color);
+  }
+
+  @media only screen and (max-width: 564px) {
+    .wrapper {
+      padding: 20px;
+    }
+    .convert_box {
+      padding: 7.5em 1.5em 4em 1.5em;
+    }
+  }
