@@ -21,6 +21,8 @@
                 <img src="/img/logo_demander_white_forca_de_vendas.png" alt="Logo Demander" width="200px">
             </div>
             <form action="" method="post">
+
+                <!-- campo para receber o valor a ser convertido -->
                 @csrf
                 <div class="input_box text-center">
                     <label for="exampleFormControlInput1" class="form-label">Número</label>
@@ -28,6 +30,7 @@
                 </div>
                 <div class="input_box text-center">
 
+                    <!-- label para exibir o valor solicitado -->
                     <label for="disabledTextInput" class="form-label"> Número solicitado: <span class="valor_final">
                         <?php
                             if(!empty($valor)){
@@ -36,6 +39,8 @@
                         ?>
                         </span>
                     </label>
+
+                    <!-- label para exibir o valor solicitado com o resultado da conversão -->
                     <label for="disabledTextInput" class="form-label"> Valor convertido: <span class="valor_final">
                         <?php
                             if(!empty($resultado)){
@@ -44,7 +49,19 @@
                         ?>
                         </span>
                     </label>
+
+                    <!-- label para exibir o erro de valor inválido -->
+                    <label for="disabledTextInput" class="form-label"><span class="valor_final">
+                        <?php
+                            if(!empty($error)){
+                                echo $error;
+                            }
+                        ?>
+                        </span>
+                    </label>
                 </div>
+
+                <!-- botão para converter -->
                 <div class="input_box">
                     <button type="submit" class="btn converter">Converter</button>
                 </div>
